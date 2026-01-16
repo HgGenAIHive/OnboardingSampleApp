@@ -12,16 +12,25 @@ function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [onboardingData, setOnboardingData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch('/api/onboarding')
-      .then(res => res.json())
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('Invalid response format');
+        return data;
+      })
       .then(data => {
         setOnboardingData(data);
+        setError(null);
         setLoading(false);
       })
       .catch(err => {
         console.error('Failed to fetch onboarding data:', err);
+        setError(err.message);
+        setOnboardingData([]);
         setLoading(false);
       });
   }, []);
@@ -47,7 +56,7 @@ function App() {
 
       <main className="content">
         {activeTab === 'dashboard' && (
-          <DashboardTab data={onboardingData} loading={loading} />
+          <DashboardTab data={onboardingData} loading={loading} error={error} />
         )}
         {activeTab === 'customer-info' && (
           <PlaceholderTab title="Customer Info" description="Collect and validate customer information" />
@@ -66,9 +75,18 @@ function App() {
   );
 }
 
-function DashboardTab({ data, loading }) {
+function DashboardTab({ data, loading, error }) {
   if (loading) {
     return <div className="placeholder"><p>Loading...</p></div>;
+  }
+
+  if (error) {
+    return (
+      <div className="placeholder">
+        <p style={{ color: '#dc2626' }}>⚠️ Failed to load onboarding data</p>
+        <p style={{ fontSize: '0.85rem', color: '#6b7280' }}>{error}</p>
+      </div>
+    );
   }
 
   if (data.length === 0) {
