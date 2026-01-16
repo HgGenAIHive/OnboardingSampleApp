@@ -1,0 +1,15 @@
+{
+  "name": "onboarding-server",
+  "version": "1.0.0",
+  "description": "Backend API for Onboarding Sample App",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test src/**/*.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
