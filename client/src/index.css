@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+
+header p {
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6b7280;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  color: #2563eb;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  font-weight: 500;
+}
+
+.content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder {
+  text-align: center;
+  color: #9ca3af;
+  padding: 40px;
+}
+
+.placeholder h2 {
+  margin-bottom: 8px;
+  color: #6b7280;
+}
+
+.progress-section {
+  margin-top: 20px;
+}
+
+.progress-bar-container {
+  background: #e5e7eb;
+  border-radius: 9999px;
+  height: 24px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-bar {
+  background: #2563eb;
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-width: fit-content;
+  padding: 0 12px;
+}
+
+.checklist {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.checklist li:last-child {
+  border-bottom: none;
+}
+
+.step-status {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.step-status.pending {
+  background: #e5e7eb;
+  color: #9ca3af;
+}
+
+.step-status.completed {
+  background: #10b981;
+  color: white;
+}
+
+.step-status.in_progress {
+  background: #f59e0b;
+  color: white;
+}
+
+.customer-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.customer-card h3 {
+  margin-bottom: 8px;
+}
+
+.customer-meta {
+  display: flex;
+  gap: 16px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
