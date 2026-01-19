@@ -1,0 +1,19 @@
+contactId,clientCode,firstName,lastName,emailAddress,phoneNumber,jobTitle,isActive,communicationPreference,businessUnit
+CON-001,XYZ-001,Robert,Williams,rwilliams@apexdigital.com,555.111.2222,CEO,Y,EMAIL,EXEC
+CON-002,XYZ-001,Nancy,Turner,nturner@apexdigital.com,555.111.2223,Finance Director,Y,EMAIL,FIN
+CON-003,XYZ-002,Karen,Thompson,kthompson@beaconins.com,555.222.3333,Principal,Y,PHONE,MGMT
+CON-004,XYZ-002,George,Adams,gadams@beaconins.com,555.222.3334,Office Manager,Y,EMAIL,ADMIN
+CON-005,XYZ-003,Carlos,Martinez,cmartinez@cascadeplumb.com,555.333.4444,Owner,Y,TEXT,OPS
+CON-006,XYZ-004,Michelle,Anderson,manderson@deltaeng.com,555.444.5555,President,N,EMAIL,EXEC
+CON-007,XYZ-004,Paul,Wright,pwright@deltaeng.com,555.444.5556,CFO,N,PHONE,FIN
+CON-008,XYZ-005,David,Jackson,djackson@echomedia.com,555.555.6666,Creative Director,Y,EMAIL,CREATIVE
+CON-009,XYZ-005,Rachel,Green,rgreen@echomedia.com,555.555.6667,Accountant,Y,EMAIL,FIN
+CON-010,XYZ-006,Jennifer,White,jwhite@frontierlog.com,555.666.7777,VP Operations,Y,EMAIL,OPS
+CON-011,XYZ-006,Mark,Phillips,mphillips@frontierlog.com,555.666.7778,Controller,Y,PHONE,FIN
+CON-012,XYZ-007,Michael,Harris,mharris@gatewaymed.org,555.777.8888,Practice Manager,Y,EMAIL,ADMIN
+CON-013,XYZ-008,Susan,Clark,sclark@harborrest.com,555.888.9999,General Manager,P,EMAIL,MGMT
+CON-014,XYZ-009,Brian,Lewis,blewis@infinitysoft.io,555.999.0000,CTO,Y,EMAIL,TECH
+CON-015,XYZ-009,Laura,King,lking@infinitysoft.io,555.999.0001,Finance Lead,Y,EMAIL,FIN
+CON-016,XYZ-010,Amy,Robinson,arobinson@jadeconsult.com,555.000.1111,Managing Partner,Y,EMAIL,EXEC
+CON-017,XYZ-011,Steven,Walker,swalker@keystonemfg.com,555.001.2222,Plant Manager,Y,PHONE,OPS
+CON-018,XYZ-012,Patricia,Hall,phall@lakesidedental.com,555.002.3333,Dentist/Owner,N,PHONE,CLINICAL

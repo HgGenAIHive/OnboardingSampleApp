@@ -1,0 +1,40 @@
+Account Number,Account Name,Account Type,Sub Type,Normal Balance,Status,Description,Parent Account
+1000,Cash and Cash Equivalents,Asset,Current Asset,Debit,Active,Main operating cash accounts,
+1010,Petty Cash,Asset,Current Asset,Debit,Active,Small cash on hand,1000
+1020,Checking Account,Asset,Current Asset,Debit,Active,Primary business checking,1000
+1030,Savings Account,Asset,Current Asset,Debit,Active,Business savings account,1000
+1100,Accounts Receivable,Asset,Current Asset,Debit,Active,Customer receivables,
+1200,Inventory,Asset,Current Asset,Debit,Active,Merchandise inventory,
+1300,Prepaid Expenses,Asset,Current Asset,Debit,Active,Prepaid insurance and rent,
+1500,Fixed Assets,Asset,Fixed Asset,Debit,Active,Long-term assets,
+1510,Equipment,Asset,Fixed Asset,Debit,Active,Office and production equipment,1500
+1520,Vehicles,Asset,Fixed Asset,Debit,Active,Company vehicles,1500
+1530,Buildings,Asset,Fixed Asset,Debit,Active,Owned buildings,1500
+1590,Accumulated Depreciation,Asset,Contra Asset,Credit,Active,Depreciation contra account,1500
+2000,Accounts Payable,Liability,Current Liability,Credit,Active,Vendor payables,
+2100,Accrued Expenses,Liability,Current Liability,Credit,Active,Accrued liabilities,
+2200,Sales Tax Payable,Liability,Current Liability,Credit,Active,Collected sales tax,
+2300,Payroll Liabilities,Liability,Current Liability,Credit,Active,Wages and taxes payable,
+2500,Notes Payable,Liability,Long-term Liability,Credit,Active,Long-term debt,
+2600,Mortgage Payable,Liability,Long-term Liability,Credit,Active,Building mortgage,
+3000,Owner's Equity,Equity,Owner's Equity,Credit,Active,Owner's capital account,
+3100,Retained Earnings,Equity,Retained Earnings,Credit,Active,Accumulated profits,
+3200,Owner's Draws,Equity,Owner's Draws,Debit,Active,Owner withdrawals,
+4000,Sales Revenue,Revenue,Operating Revenue,Credit,Active,Product sales,
+4100,Service Revenue,Revenue,Operating Revenue,Credit,Active,Service income,
+4200,Interest Income,Revenue,Other Revenue,Credit,Active,Bank interest earned,
+4300,Other Income,Revenue,Other Revenue,Credit,Active,Miscellaneous income,
+5000,Cost of Goods Sold,Expense,Cost of Sales,Debit,Active,Direct product costs,
+5100,Direct Labor,Expense,Cost of Sales,Debit,Active,Production labor,
+5200,Materials,Expense,Cost of Sales,Debit,Active,Raw materials,
+6000,Operating Expenses,Expense,Operating Expense,Debit,Active,General operating costs,
+6100,Salaries and Wages,Expense,Operating Expense,Debit,Active,Employee compensation,6000
+6200,Rent Expense,Expense,Operating Expense,Debit,Active,Office and facility rent,6000
+6300,Utilities,Expense,Operating Expense,Debit,Active,Electric, gas, water,6000
+6400,Insurance,Expense,Operating Expense,Debit,Active,Business insurance,6000
+6500,Office Supplies,Expense,Operating Expense,Debit,Active,General office supplies,6000
+6600,Professional Fees,Expense,Operating Expense,Debit,Active,Legal and accounting fees,6000
+6700,Depreciation Expense,Expense,Operating Expense,Debit,Active,Asset depreciation,6000
+6800,Marketing and Advertising,Expense,Operating Expense,Debit,Active,Promotional expenses,6000
+7000,Interest Expense,Expense,Other Expense,Debit,Active,Loan interest,
+7100,Bank Fees,Expense,Other Expense,Debit,Active,Bank service charges,

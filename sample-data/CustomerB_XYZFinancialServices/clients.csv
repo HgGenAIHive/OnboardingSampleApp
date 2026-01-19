@@ -1,0 +1,13 @@
+clientCode,companyName,entityType,clientStatus,startDate,federalTaxId,yearlyRevenue,sectorCode,billingTerms,mainContact
+XYZ-001,Apex Digital Marketing,CORP,A,2023-02-10,11-2233445,1850000,TECH,NET30,Williams, Robert
+XYZ-002,Beacon Insurance Agency,LLC,A,2023-04-15,22-3344556,920000,FINS,NET15,Thompson, Karen
+XYZ-003,Cascade Plumbing Services,SOLE,A,2023-06-22,33-4455667,380000,SVCS,COD,Martinez, Carlos
+XYZ-004,Delta Engineering Group,SCORP,I,2022-11-30,44-5566778,2200000,ENGR,NET45,Anderson, Michelle
+XYZ-005,Echo Media Productions,PART,A,2023-08-05,55-6677889,1100000,MEDIA,NET30,Jackson, David
+XYZ-006,Frontier Logistics Inc,CORP,A,2023-09-18,66-7788990,4500000,TRANS,NET60,White, Jennifer
+XYZ-007,Gateway Medical Clinic,NPROF,A,2023-01-25,77-8899001,750000,HLTH,NET30,Harris, Michael
+XYZ-008,Harbor Restaurant Group,LLC,P,2023-12-01,88-9900112,1650000,HOSP,NET15,Clark, Susan
+XYZ-009,Infinity Software Labs,SCORP,A,2023-07-12,99-0011223,2800000,TECH,NET45,Lewis, Brian
+XYZ-010,Jade Consulting Partners,PART,A,2023-05-08,10-1122334,680000,CONS,NET30,Robinson, Amy
+XYZ-011,Keystone Manufacturing,CORP,A,2023-03-20,21-2233445,3200000,MFGR,NET30,Walker, Steven
+XYZ-012,Lakeside Dental Practice,SOLE,I,2022-09-14,32-3344556,420000,HLTH,COD,Hall, Patricia

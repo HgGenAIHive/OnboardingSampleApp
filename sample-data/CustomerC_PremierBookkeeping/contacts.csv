@@ -1,0 +1,21 @@
+contact_ref,customer_id,given_name,family_name,email,telephone,position,contact_status,preferred_channel,division
+CTR-001,PB-0001,Sophie,Bennett,sophie@artisanbakery.co.uk,+44 7700 100001,Owner/Manager,Active,Email,Management
+CTR-002,PB-0001,Thomas,Bennett,thomas@artisanbakery.co.uk,+44 7700 100002,Head Baker,Active,Phone,Operations
+CTR-003,PB-0002,Oliver,Hughes,oliver.hughes@brightonweb.co.uk,+44 7700 200001,Managing Director,Active,Email,Executive
+CTR-004,PB-0002,Isabelle,Murray,isabelle@brightonweb.co.uk,+44 7700 200002,Finance Manager,Active,Email,Accounts
+CTR-005,PB-0003,Emma,Richardson,e.richardson@coastalproperty.co.uk,+44 7700 300001,Senior Partner,Active,Email,Management
+CTR-006,PB-0003,Alexander,Shaw,a.shaw@coastalproperty.co.uk,+44 7700 300002,Accounts Clerk,Active,Email,Accounts
+CTR-007,PB-0004,James,Crawford,jcrawford@docksideimports.co.uk,+44 7700 400001,Director,Dormant,Email,Executive
+CTR-008,PB-0004,Natalie,Brooks,nbrooks@docksideimports.co.uk,+44 7700 400002,Financial Controller,Dormant,Phone,Accounts
+CTR-009,PB-0005,Charlotte,Mason,charlotte@evergreenlandscape.co.uk,+44 7700 500001,Partner,Active,SMS,Operations
+CTR-010,PB-0005,Ryan,Fletcher,ryan@evergreenlandscape.co.uk,+44 7700 500002,Partner,Active,Phone,Operations
+CTR-011,PB-0006,William,Foster,w.foster@foxwoodvet.co.uk,+44 7700 600001,Practice Owner,Active,Email,Clinical
+CTR-012,PB-0006,Grace,Mitchell,g.mitchell@foxwoodvet.co.uk,+44 7700 600002,Practice Manager,Active,Email,Administration
+CTR-013,PB-0007,Hannah,Price,hannah.price@grovestreetpharmacy.co.uk,+44 7700 700001,Pharmacist/Owner,Active,Phone,Clinical
+CTR-014,PB-0008,Daniel,Cooper,d.cooper@harbourviewhotel.co.uk,+44 7700 800001,General Manager,Active,Email,Management
+CTR-015,PB-0008,Megan,Stewart,m.stewart@harbourviewhotel.co.uk,+44 7700 800002,Head of Finance,Active,Email,Accounts
+CTR-016,PB-0009,Victoria,Palmer,v.palmer@ironbridgeeng.co.uk,+44 7700 900001,Managing Partner,Active,Email,Executive
+CTR-017,PB-0009,Benjamin,Cole,b.cole@ironbridgeeng.co.uk,+44 7700 900002,Finance Director,Active,Email,Accounts
+CTR-018,PB-0010,Matthew,Barnes,matt.barnes@junctionauto.co.uk,+44 7700 000001,Owner,Suspended,Phone,Operations
+CTR-019,PB-0011,Rebecca,Ellis,rebecca@kensingtontutoring.co.uk,+44 7700 110001,Co-Founder,Active,Email,Education
+CTR-020,PB-0012,Christopher,Ward,c.ward@lighthousesecurity.co.uk,+44 7700 120001,CEO,Active,Email,Executive

@@ -1,0 +1,26 @@
+Transaction ID,Date,Client ID,Account Number,Description,Transaction Type,Amount,Reference Number,Payment Method,Status,Category
+TXN001,01/15/2024,C001,1020,Client payment received,Credit,15000.00,INV-2024-001,Wire Transfer,Cleared,Revenue
+TXN002,01/16/2024,C001,5000,Inventory purchase,Debit,8500.00,PO-2024-001,Check,Cleared,Cost of Goods
+TXN003,01/18/2024,C002,4000,Monthly service fee,Credit,2500.00,INV-2024-002,ACH,Cleared,Revenue
+TXN004,01/20/2024,C002,6200,Office rent payment,Debit,3200.00,RENT-JAN-24,Check,Cleared,Operating Expense
+TXN005,01/22/2024,C003,1100,Invoice issued,Debit,12000.00,INV-2024-003,Credit Card,Pending,Receivable
+TXN006,01/23/2024,C003,6100,Payroll processing,Debit,25000.00,PR-2024-01,Direct Deposit,Cleared,Payroll
+TXN007,01/25/2024,C004,4100,Consulting services,Credit,4500.00,INV-2024-004,Cash,Cleared,Revenue
+TXN008,01/26/2024,C005,2000,Vendor payment,Credit,7800.00,AP-2024-001,Wire Transfer,Cleared,Payable
+TXN009,01/28/2024,C005,1510,Equipment purchase,Debit,15000.00,PO-2024-002,Financing,Pending,Fixed Asset
+TXN010,01/30/2024,C006,6400,Insurance premium,Debit,1200.00,INS-Q1-24,ACH,Cleared,Operating Expense
+TXN011,02/01/2024,C006,4000,Grant revenue,Credit,50000.00,GRANT-2024-001,Wire Transfer,Cleared,Revenue
+TXN012,02/03/2024,C007,6600,Legal filing fees,Debit,850.00,LEGAL-2024-001,Credit Card,Cleared,Professional Fees
+TXN013,02/05/2024,C007,1020,Client retainer deposit,Credit,10000.00,RET-2024-001,Check,Cleared,Revenue
+TXN014,02/07/2024,C008,6300,Utility payment,Debit,2100.00,UTIL-FEB-24,ACH,Cleared,Operating Expense
+TXN015,02/10/2024,C008,6800,Marketing campaign,Debit,5500.00,MKT-2024-001,Credit Card,Pending,Marketing
+TXN016,02/12/2024,C009,5200,Raw materials purchase,Debit,18000.00,PO-2024-003,Wire Transfer,Cleared,Cost of Goods
+TXN017,02/14/2024,C009,4000,Product sales,Credit,32000.00,INV-2024-005,ACH,Cleared,Revenue
+TXN018,02/16/2024,C010,6200,Property lease payment,Debit,4500.00,LEASE-FEB-24,Check,Voided,Operating Expense
+TXN019,02/18/2024,C001,7000,Loan interest payment,Debit,1250.00,LOAN-INT-FEB,ACH,Cleared,Interest Expense
+TXN020,02/20/2024,C002,6500,Office supplies,Debit,450.00,SUP-2024-001,Credit Card,Cleared,Operating Expense
+TXN021,02/22/2024,C003,4200,Interest earned,Credit,125.00,INT-FEB-24,Bank Transfer,Cleared,Other Income
+TXN022,02/25/2024,C004,2200,Sales tax remittance,Credit,890.00,TAX-Q1-24,ACH,Cleared,Tax Payment
+TXN023,02/28/2024,C005,6700,Monthly depreciation,Debit,1500.00,DEP-FEB-24,Journal Entry,Cleared,Depreciation
+TXN024,03/01/2024,C006,6100,Staff salaries,Debit,35000.00,PR-2024-02,Direct Deposit,Cleared,Payroll
+TXN025,03/05/2024,C007,7100,Bank service fees,Debit,75.00,BANK-FEB-24,Bank Charge,Cleared,Bank Fees

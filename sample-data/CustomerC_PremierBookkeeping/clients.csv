@@ -1,0 +1,13 @@
+customer_id,business_name,legal_structure,account_status,registration_date,tax_reference,gross_revenue,industry_sector,credit_terms,key_contact_name
+PB-0001,Artisan Bakery & Cafe,Sole Trader,ACTIVE,15-03-2023,GB123456789,285000.00,Food & Beverage,Immediate,Sophie Bennett
+PB-0002,Brighton Web Design Ltd,Limited Company,ACTIVE,22-05-2023,GB234567890,520000.00,Digital Services,30 Days,Oliver Hughes
+PB-0003,Coastal Property Management,LLP,ACTIVE,10-07-2023,GB345678901,890000.00,Property,45 Days,Emma Richardson
+PB-0004,Dockside Imports & Exports,Limited Company,DORMANT,28-01-2022,GB456789012,1250000.00,Import/Export,60 Days,James Crawford
+PB-0005,Evergreen Landscaping Services,Partnership,ACTIVE,05-09-2023,GB567890123,340000.00,Landscaping,14 Days,Charlotte Mason
+PB-0006,Foxwood Veterinary Practice,Limited Company,ACTIVE,18-11-2023,GB678901234,680000.00,Veterinary,30 Days,William Foster
+PB-0007,Grove Street Pharmacy,Sole Trader,ACTIVE,03-04-2023,GB789012345,420000.00,Pharmacy,Immediate,Hannah Price
+PB-0008,Harbour View Hotel Ltd,Limited Company,ACTIVE,12-06-2023,GB890123456,1850000.00,Hospitality,30 Days,Daniel Cooper
+PB-0009,Ironbridge Engineering Co,LLP,ACTIVE,25-08-2023,GB901234567,2100000.00,Engineering,45 Days,Victoria Palmer
+PB-0010,Junction Auto Repairs,Sole Trader,SUSPENDED,14-02-2022,GB012345678,195000.00,Automotive,Immediate,Matthew Barnes
+PB-0011,Kensington Tutoring Services,Partnership,ACTIVE,30-10-2023,GB123456780,280000.00,Education,14 Days,Rebecca Ellis
+PB-0012,Lighthouse Security Solutions,Limited Company,ACTIVE,08-12-2023,GB234567801,750000.00,Security,30 Days,Christopher Ward

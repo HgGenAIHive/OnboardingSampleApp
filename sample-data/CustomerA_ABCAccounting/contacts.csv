@@ -1,0 +1,16 @@
+Contact ID,Client ID,First Name,Last Name,Email,Phone,Role,Status,Preferred Contact Method,Department
+CT001,C001,John,Smith,john.smith@riverside-mfg.com,(555) 123-4567,Owner,Active,Email,Executive
+CT002,C001,Mary,Johnson,mary.j@riverside-mfg.com,(555) 123-4568,CFO,Active,Phone,Finance
+CT003,C002,Sarah,Johnson,sarah@downtownretail.com,(555) 234-5678,Managing Partner,Active,Email,Management
+CT004,C002,James,Williams,james.w@downtownretail.com,(555) 234-5679,Accountant,Active,Email,Finance
+CT005,C003,Mike,Chen,mchen@techsolutions.io,(555) 345-6789,CEO,Active,Email,Executive
+CT006,C003,Linda,Garcia,lgarcia@techsolutions.io,(555) 345-6790,Controller,Active,Phone,Finance
+CT007,C004,Emily,Davis,emily.davis@greenvalley.farm,(555) 456-7890,Owner,Inactive,Phone,Operations
+CT008,C005,Robert,Wilson,rwilson@coastalconstruction.com,(555) 567-8901,President,Active,Email,Executive
+CT009,C005,Patricia,Moore,pmoore@coastalconstruction.com,(555) 567-8902,Bookkeeper,Active,Email,Finance
+CT010,C006,Lisa,Anderson,landerson@metrohealthcare.org,(555) 678-9012,Executive Director,Active,Email,Executive
+CT011,C006,Kevin,Thompson,kthompson@metrohealthcare.org,(555) 678-9013,Finance Manager,Active,Phone,Finance
+CT012,C007,David,Brown,dbrown@summitlegal.com,(555) 789-0123,Senior Partner,Active,Email,Legal
+CT013,C008,Jennifer,Martinez,jmartinez@sunrisehospitality.com,(555) 890-1234,General Manager,Pending,Email,Operations
+CT014,C009,Thomas,Lee,tlee@pacifictrading.com,(555) 901-2345,Director,Active,Email,Executive
+CT015,C010,Amanda,Taylor,ataylor@mountainviewprop.com,(555) 012-3456,Broker,Inactive,Phone,Sales

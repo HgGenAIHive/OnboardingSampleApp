@@ -1,0 +1,40 @@
+nominal_code,account_title,category,sub_category,debit_credit,is_active,notes,parent_code
+0010,Bank Current Account,Assets,Current Assets,D,Yes,Main trading account,
+0011,Bank Deposit Account,Assets,Current Assets,D,Yes,Savings account,0010
+0012,Petty Cash,Assets,Current Assets,D,Yes,Cash float,0010
+0020,Trade Debtors,Assets,Current Assets,D,Yes,Customer balances,
+0030,Stock,Assets,Current Assets,D,Yes,Inventory on hand,
+0040,Prepayments,Assets,Current Assets,D,Yes,Advance payments,
+0050,Plant and Machinery,Assets,Fixed Assets,D,Yes,Production equipment,
+0051,Office Equipment,Assets,Fixed Assets,D,Yes,Computers and furniture,0050
+0052,Motor Vehicles,Assets,Fixed Assets,D,Yes,Company vehicles,0050
+0059,Depreciation,Assets,Fixed Assets,C,Yes,Accumulated depreciation,0050
+1000,Trade Creditors,Liabilities,Current Liabilities,C,Yes,Supplier balances,
+1010,Accruals,Liabilities,Current Liabilities,C,Yes,Accrued expenses,
+1020,VAT Control,Liabilities,Current Liabilities,C,Yes,VAT liability,
+1030,PAYE/NI Payable,Liabilities,Current Liabilities,C,Yes,Payroll taxes,
+1100,Bank Loan,Liabilities,Long Term Liabilities,C,Yes,Term loan,
+1110,HP Creditor,Liabilities,Long Term Liabilities,C,Yes,Hire purchase,
+2000,Share Capital,Capital,Shareholders Funds,C,Yes,Issued shares,
+2010,Profit and Loss Account,Capital,Retained Profits,C,Yes,Accumulated P&L,
+2020,Drawings,Capital,Drawings,D,Yes,Owner withdrawals,
+3000,Sales - Products,Income,Turnover,C,Yes,Product revenue,
+3010,Sales - Services,Income,Turnover,C,Yes,Service revenue,
+3100,Bank Interest Received,Income,Other Income,C,Yes,Interest earned,
+3200,Sundry Income,Income,Other Income,C,Yes,Miscellaneous income,
+4000,Purchases,Direct Costs,Cost of Sales,D,Yes,Goods purchased,
+4010,Direct Wages,Direct Costs,Cost of Sales,D,Yes,Production wages,
+4020,Carriage Inwards,Direct Costs,Cost of Sales,D,Yes,Delivery costs,
+5000,Gross Wages,Overheads,Employment Costs,D,Yes,Staff salaries,
+5010,Employers NI,Overheads,Employment Costs,D,Yes,National insurance,5000
+5020,Pension Contributions,Overheads,Employment Costs,D,Yes,Pension costs,5000
+6000,Rent and Rates,Overheads,Premises Costs,D,Yes,Property costs,
+6010,Light and Heat,Overheads,Premises Costs,D,Yes,Utilities,6000
+6020,Property Insurance,Overheads,Premises Costs,D,Yes,Building insurance,6000
+7000,Telephone and Internet,Overheads,Admin Expenses,D,Yes,Communications,
+7010,Stationery,Overheads,Admin Expenses,D,Yes,Office supplies,
+7020,Professional Fees,Overheads,Admin Expenses,D,Yes,Accountancy and legal,
+7030,Depreciation Charge,Overheads,Admin Expenses,D,Yes,Asset depreciation,
+7040,Advertising,Overheads,Admin Expenses,D,Yes,Marketing costs,
+8000,Bank Interest Paid,Finance Costs,Interest Payable,D,Yes,Loan interest,
+8010,Bank Charges,Finance Costs,Interest Payable,D,Yes,Bank fees,

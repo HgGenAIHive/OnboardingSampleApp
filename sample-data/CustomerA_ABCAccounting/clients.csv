@@ -1,0 +1,11 @@
+Client ID,Client Name,Business Type,Status,Date Onboarded,Tax ID,Annual Revenue,Industry,Payment Terms,Primary Contact
+C001,Riverside Manufacturing LLC,Corporation,Active,01/15/2023,12-3456789,2500000.00,Manufacturing,Net 30,John Smith
+C002,Downtown Retail Group,Partnership,Active,03/22/2023,23-4567890,850000.00,Retail,Net 15,Sarah Johnson
+C003,Tech Solutions Inc,S-Corporation,Active,06/10/2023,34-5678901,1200000.00,Technology,Net 45,Mike Chen
+C004,Green Valley Farms,Sole Proprietorship,Inactive,02/28/2022,45-6789012,450000.00,Agriculture,Due on Receipt,Emily Davis
+C005,Coastal Construction Co,Corporation,Active,09/05/2023,56-7890123,3800000.00,Construction,Net 30,Robert Wilson
+C006,Metro Healthcare Services,Non-Profit,Active,11/12/2023,67-8901234,1500000.00,Healthcare,Net 60,Lisa Anderson
+C007,Summit Legal Partners,Partnership,Active,04/18/2023,78-9012345,920000.00,Legal Services,Net 30,David Brown
+C008,Sunrise Hospitality Group,Corporation,Pending,12/01/2023,89-0123456,2100000.00,Hospitality,Net 45,Jennifer Martinez
+C009,Pacific Trading Company,LLC,Active,07/25/2023,90-1234567,1750000.00,Wholesale,Net 30,Thomas Lee
+C010,Mountain View Properties,S-Corporation,Inactive,05/14/2022,01-2345678,680000.00,Real Estate,Due on Receipt,Amanda Taylor

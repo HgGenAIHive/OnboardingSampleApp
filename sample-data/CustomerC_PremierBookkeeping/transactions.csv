@@ -1,0 +1,26 @@
+transaction_ref,posting_date,customer_id,nominal_code,narrative,dr_cr,amount_gbp,document_ref,settlement_method,posting_status,cost_centre
+TRN-00001,15-01-2024,PB-0001,0010,Customer receipt,C,4250.00,SI-2024-001,BACS,Reconciled,Sales
+TRN-00002,17-01-2024,PB-0001,4000,Flour and ingredients,D,1850.00,PI-2024-001,Cheque,Reconciled,Purchases
+TRN-00003,20-01-2024,PB-0002,3010,Website development,C,8500.00,SI-2024-002,Bank Transfer,Reconciled,Sales
+TRN-00004,22-01-2024,PB-0002,6000,Office rent Q1,D,4500.00,PI-2024-002,Standing Order,Reconciled,Premises
+TRN-00005,25-01-2024,PB-0003,0020,Invoice raised,D,12500.00,SI-2024-003,Credit Card,Unreconciled,Debtors
+TRN-00006,28-01-2024,PB-0003,5000,Monthly salaries,D,28000.00,PAY-2024-01,BACS,Reconciled,Payroll
+TRN-00007,30-01-2024,PB-0004,3000,Export sale,C,35000.00,SI-2024-004,Wire,Reconciled,Sales
+TRN-00008,02-02-2024,PB-0004,1000,Supplier payment,C,18500.00,PI-2024-003,BACS,Reconciled,Creditors
+TRN-00009,05-02-2024,PB-0005,0052,Van purchase,D,22000.00,PI-2024-004,HP,Unreconciled,Fixed Assets
+TRN-00010,08-02-2024,PB-0005,6020,Annual insurance,D,1800.00,PI-2024-005,Direct Debit,Reconciled,Premises
+TRN-00011,10-02-2024,PB-0006,3010,Veterinary services,C,15200.00,SI-2024-005,Card Payment,Reconciled,Sales
+TRN-00012,12-02-2024,PB-0006,7020,Accountancy fees,D,2500.00,PI-2024-006,BACS,Reconciled,Admin
+TRN-00013,15-02-2024,PB-0007,0010,Till takings,C,3850.00,CASH-2024-001,Cash,Reconciled,Sales
+TRN-00014,18-02-2024,PB-0007,6010,Electricity bill,D,680.00,PI-2024-007,Direct Debit,Reconciled,Premises
+TRN-00015,20-02-2024,PB-0008,7040,Marketing campaign,D,5500.00,PI-2024-008,Credit Card,Unreconciled,Marketing
+TRN-00016,22-02-2024,PB-0008,3000,Room bookings,C,42000.00,SI-2024-006,Online Payment,Reconciled,Sales
+TRN-00017,25-02-2024,PB-0009,3010,Engineering consultancy,C,28500.00,SI-2024-007,Bank Transfer,Reconciled,Sales
+TRN-00018,28-02-2024,PB-0009,5000,Engineer salaries,D,65000.00,PAY-2024-02,BACS,Reconciled,Payroll
+TRN-00019,02-03-2024,PB-0010,0010,Service payment,C,450.00,SI-2024-008,Cash,Cancelled,Sales
+TRN-00020,05-03-2024,PB-0011,3010,Tutoring fees,C,6200.00,SI-2024-009,BACS,Reconciled,Sales
+TRN-00021,08-03-2024,PB-0011,7010,Teaching materials,D,380.00,PI-2024-009,Petty Cash,Reconciled,Admin
+TRN-00022,10-03-2024,PB-0012,3010,Security contract,C,18500.00,SI-2024-010,Bank Transfer,Reconciled,Sales
+TRN-00023,12-03-2024,PB-0012,5010,Employer NI,D,4200.00,PAY-2024-03,BACS,Reconciled,Payroll
+TRN-00024,15-03-2024,PB-0001,3100,Bank interest,C,12.50,INT-2024-Q1,Bank,Reconciled,Other
+TRN-00025,18-03-2024,PB-0002,8010,Bank charges,D,35.00,BANK-2024-03,Bank Charge,Reconciled,Finance
