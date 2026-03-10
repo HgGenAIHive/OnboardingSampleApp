@@ -97,6 +97,15 @@ function updateOnboardingState(customerId, updates) {
   return null;
 }
 
+function updateCustomer(id, updates) {
+  const index = store.customers.findIndex(c => c.id === id);
+  if (index !== -1) {
+    store.customers[index] = { ...store.customers[index], ...updates };
+    return store.customers[index];
+  }
+  return null;
+}
+
 module.exports = {
   getCustomers,
   getCustomerById,
@@ -107,5 +116,6 @@ module.exports = {
   getOnboardingState,
   getAllOnboardingStates,
   addOnboardingState,
-  updateOnboardingState
+  updateOnboardingState,
+  updateCustomer
 };

@@ -13,9 +13,10 @@ function App() {
   const [onboardingData, setOnboardingData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedCustomerId, setSelectedCustomerId] = useState(null);
 
-  useEffect(() => {
-    fetch('/api/onboarding')
+  function refreshOnboardingData() {
+    return fetch('/api/onboarding')
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
@@ -33,7 +34,16 @@ function App() {
         setOnboardingData([]);
         setLoading(false);
       });
+  }
+
+  useEffect(() => {
+    refreshOnboardingData();
   }, []);
+
+  function handleSelectCustomer(customerId) {
+    setSelectedCustomerId(customerId);
+    setActiveTab('customer-info');
+  }
 
   return (
     <div className="app">
@@ -56,10 +66,10 @@ function App() {
 
       <main className="content">
         {activeTab === 'dashboard' && (
-          <DashboardTab data={onboardingData} loading={loading} error={error} />
+          <DashboardTab data={onboardingData} loading={loading} error={error} onSelectCustomer={handleSelectCustomer} />
         )}
         {activeTab === 'customer-info' && (
-          <PlaceholderTab title="Customer Info" description="Collect and validate customer information" />
+          <CustomerInfoTab customerId={selectedCustomerId} onSave={refreshOnboardingData} />
         )}
         {activeTab === 'data-mapping' && (
           <PlaceholderTab title="Data Mapping" description="Map customer data to platform configuration" />
@@ -75,7 +85,7 @@ function App() {
   );
 }
 
-function DashboardTab({ data, loading, error }) {
+function DashboardTab({ data, loading, error, onSelectCustomer }) {
   if (loading) {
     return <div className="placeholder"><p>Loading...</p></div>;
   }
@@ -101,7 +111,11 @@ function DashboardTab({ data, loading, error }) {
       </p>
 
       {data.map(item => (
-        <div key={item.customerId} className="customer-card">
+        <div
+          key={item.customerId}
+          className="customer-card clickable"
+          onClick={() => onSelectCustomer(item.customerId)}
+        >
           <h3>{item.customerName}</h3>
           <div className="customer-meta">
             <span>📍 {item.customerRegion}</span>
@@ -118,11 +132,118 @@ function DashboardTab({ data, loading, error }) {
   );
 }
 
+function CustomerInfoTab({ customerId, onSave }) {
+  const [form, setForm] = useState({ name: '', industry: '', region: '', contactEmail: '' });
+  const [loadingCustomer, setLoadingCustomer] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    if (!customerId) return;
+    setLoadingCustomer(true);
+    setMessage(null);
+    fetch(`/api/customers/${customerId}`)
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        setForm({
+          name: data.name || '',
+          industry: data.industry || '',
+          region: data.region || '',
+          contactEmail: data.contactEmail || ''
+        });
+        setLoadingCustomer(false);
+      })
+      .catch(err => {
+        setMessage({ type: 'error', text: `Failed to load customer: ${err.message}` });
+        setLoadingCustomer(false);
+      });
+  }, [customerId]);
+
+  if (!customerId) {
+    return (
+      <div className="placeholder">
+        <h2>Customer Info</h2>
+        <p>Please select a customer from the Dashboard to view their information.</p>
+      </div>
+    );
+  }
+
+  if (loadingCustomer) {
+    return <div className="placeholder"><p>Loading customer...</p></div>;
+  }
+
+  function handleChange(e) {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSaving(true);
+    setMessage(null);
+    fetch(`/api/customers/${customerId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(() => {
+        setMessage({ type: 'success', text: 'Customer information saved successfully.' });
+        setSaving(false);
+        onSave();
+      })
+      .catch(err => {
+        setMessage({ type: 'error', text: `Failed to save: ${err.message}` });
+        setSaving(false);
+      });
+  }
+
+  return (
+    <div>
+      <h2>Customer Info</h2>
+      <p style={{ color: '#6b7280', marginBottom: '20px' }}>
+        Edit customer details and save to mark this step as complete.
+      </p>
+
+      {message && (
+        <div className={`message message-${message.type}`}>{message.text}</div>
+      )}
+
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Company Name</label>
+          <input id="name" name="name" type="text" value={form.name} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="industry">Industry</label>
+          <input id="industry" name="industry" type="text" value={form.industry} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="region">Region</label>
+          <input id="region" name="region" type="text" value={form.region} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="contactEmail">Contact Email</label>
+          <input id="contactEmail" name="contactEmail" type="email" value={form.contactEmail} onChange={handleChange} />
+        </div>
+        <button type="submit" className="btn-primary" disabled={saving}>
+          {saving ? 'Saving...' : 'Save Customer Info'}
+        </button>
+      </form>
+    </div>
+  );
+}
+
 function ProgressBar({ percent }) {
   return (
     <div className="progress-bar-container">
-      <div 
-        className="progress-bar" 
+      <div
+        className="progress-bar"
         style={{ width: `${Math.max(percent, 0)}%` }}
       >
         {percent > 0 ? `${percent}%` : ''}

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const store = require('./data/store');
+const { calculateProgress } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -54,6 +55,29 @@ app.get('/api/onboarding', (req, res) => {
   });
   
   res.json(dashboard);
+});
+
+// Update customer
+app.put('/api/customers/:id', (req, res) => {
+  const { name, industry, region, contactEmail } = req.body;
+  const updated = store.updateCustomer(req.params.id, { name, industry, region, contactEmail });
+  if (!updated) {
+    return res.status(404).json({ error: 'Customer not found' });
+  }
+
+  // Mark Customer Info step as completed
+  const onboardingState = store.getOnboardingState(req.params.id);
+  if (onboardingState) {
+    const steps = onboardingState.steps.map(s =>
+      s.id === 'step_1' ? { ...s, status: 'completed' } : s
+    );
+    store.updateOnboardingState(req.params.id, {
+      steps,
+      progressPercent: calculateProgress(steps)
+    });
+  }
+
+  res.json(updated);
 });
 
 // Get tenant by customer ID

@@ -32,10 +32,10 @@ test.describe('Onboarding Dashboard', () => {
   test('should switch between tabs', async ({ page }) => {
     await page.goto('/');
 
-    // Click on Customer Info tab
+    // Click on Customer Info tab (no customer selected)
     await page.getByRole('button', { name: 'Customer Info' }).click();
-    
-    // Verify placeholder content is shown
-    await expect(page.locator('.placeholder h2')).toContainText('Customer Info');
+
+    // Verify it prompts user to select a customer
+    await expect(page.locator('.placeholder')).toContainText('select a customer');
   });
 });
