@@ -38,7 +38,7 @@
 
 /**
  * Creates a new Customer object
- * @param {Partial<Customer>} data 
+ * @param {Partial<Customer>} data
  * @returns {Customer}
  */
 function createCustomer(data) {
@@ -54,7 +54,7 @@ function createCustomer(data) {
 
 /**
  * Creates a new Tenant object
- * @param {Partial<Tenant>} data 
+ * @param {Partial<Tenant>} data
  * @returns {Tenant}
  */
 function createTenant(data) {
@@ -82,7 +82,7 @@ function createDefaultOnboardingSteps() {
 
 /**
  * Calculates progress percentage from steps
- * @param {OnboardingStep[]} steps 
+ * @param {OnboardingStep[]} steps
  * @returns {number}
  */
 function calculateProgress(steps) {

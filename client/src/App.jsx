@@ -14,8 +14,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch('/api/onboarding')
+  const refreshOnboardingData = () => {
+    return fetch('/api/onboarding')
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
@@ -33,7 +33,22 @@ function App() {
         setOnboardingData([]);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    refreshOnboardingData();
   }, []);
+
+  const handleRemoveCustomer = async (customerId) => {
+    try {
+      const res = await fetch(`/api/customers/${customerId}`, { method: 'DELETE' });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      await refreshOnboardingData();
+    } catch (err) {
+      console.error('Failed to remove customer:', err);
+      window.alert(`Failed to remove customer: ${err.message}`);
+    }
+  };
 
   return (
     <div className="app">
@@ -56,10 +71,10 @@ function App() {
 
       <main className="content">
         {activeTab === 'dashboard' && (
-          <DashboardTab data={onboardingData} loading={loading} error={error} />
+          <DashboardTab data={onboardingData} loading={loading} error={error} onRemoveCustomer={handleRemoveCustomer} />
         )}
         {activeTab === 'customer-info' && (
-          <PlaceholderTab title="Customer Info" description="Collect and validate customer information" />
+          <CustomerInfoTab onCustomerAdded={refreshOnboardingData} />
         )}
         {activeTab === 'data-mapping' && (
           <PlaceholderTab title="Data Mapping" description="Map customer data to platform configuration" />
@@ -75,7 +90,7 @@ function App() {
   );
 }
 
-function DashboardTab({ data, loading, error }) {
+function DashboardTab({ data, loading, error, onRemoveCustomer }) {
   if (loading) {
     return <div className="placeholder"><p>Loading...</p></div>;
   }
@@ -102,7 +117,19 @@ function DashboardTab({ data, loading, error }) {
 
       {data.map(item => (
         <div key={item.customerId} className="customer-card">
-          <h3>{item.customerName}</h3>
+          <div className="customer-card-header">
+            <h3>{item.customerName}</h3>
+            <button
+              className="remove-button"
+              onClick={() => {
+                if (window.confirm(`Remove ${item.customerName} from the onboarding queue?`)) {
+                  onRemoveCustomer(item.customerId);
+                }
+              }}
+            >
+              Remove
+            </button>
+          </div>
           <div className="customer-meta">
             <span>📍 {item.customerRegion}</span>
             <span>🏭 {item.customerIndustry}</span>
@@ -121,8 +148,8 @@ function DashboardTab({ data, loading, error }) {
 function ProgressBar({ percent }) {
   return (
     <div className="progress-bar-container">
-      <div 
-        className="progress-bar" 
+      <div
+        className="progress-bar"
         style={{ width: `${Math.max(percent, 0)}%` }}
       >
         {percent > 0 ? `${percent}%` : ''}
@@ -146,6 +173,82 @@ function Checklist({ steps }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function CustomerInfoTab({ onCustomerAdded }) {
+  const [form, setForm] = useState({ name: '', industry: '', region: '', contactEmail: '' });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  const handleChange = (field) => (e) => {
+    setForm({ ...form, [field]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!form.name.trim()) {
+      setError('Customer name is required');
+      return;
+    }
+
+    setSubmitting(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      const res = await fetch('/api/customers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const created = await res.json();
+      setSuccessMessage(`${created.name} added to the onboarding queue`);
+      setForm({ name: '', industry: '', region: '', contactEmail: '' });
+      await onCustomerAdded();
+    } catch (err) {
+      console.error('Failed to add customer:', err);
+      setError(err.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Customer Info</h2>
+      <p style={{ color: '#6b7280', marginBottom: '20px' }}>Add a new customer to the onboarding queue</p>
+
+      <form className="customer-form" onSubmit={handleSubmit}>
+        <label>
+          Name*
+          <input type="text" value={form.name} onChange={handleChange('name')} required />
+        </label>
+        <label>
+          Industry
+          <input type="text" value={form.industry} onChange={handleChange('industry')} />
+        </label>
+        <label>
+          Region
+          <input type="text" value={form.region} onChange={handleChange('region')} />
+        </label>
+        <label>
+          Contact Email
+          <input type="email" value={form.contactEmail} onChange={handleChange('contactEmail')} />
+        </label>
+
+        {error && <p style={{ color: '#dc2626' }}>⚠️ {error}</p>}
+        {successMessage && <p style={{ color: '#10b981' }}>✓ {successMessage}</p>}
+
+        <button type="submit" disabled={submitting}>
+          {submitting ? 'Adding…' : 'Add Customer'}
+        </button>
+      </form>
+    </div>
   );
 }
 

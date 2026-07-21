@@ -1,10 +1,10 @@
 const { describe, it } = require('node:test');
 const assert = require('node:assert');
-const { 
-  createCustomer, 
-  createTenant, 
-  createDefaultOnboardingSteps, 
-  calculateProgress 
+const {
+  createCustomer,
+  createTenant,
+  createDefaultOnboardingSteps,
+  calculateProgress
 } = require('./index');
 
 describe('Domain Models', () => {
@@ -60,7 +60,7 @@ describe('Domain Models', () => {
   describe('createDefaultOnboardingSteps', () => {
     it('should create 4 default steps', () => {
       const steps = createDefaultOnboardingSteps();
-      
+
       assert.strictEqual(steps.length, 4);
       assert.strictEqual(steps[0].name, 'Customer Info');
       assert.strictEqual(steps[3].name, 'Import');
@@ -68,7 +68,7 @@ describe('Domain Models', () => {
 
     it('should set all steps to pending status', () => {
       const steps = createDefaultOnboardingSteps();
-      
+
       steps.forEach(step => {
         assert.strictEqual(step.status, 'pending');
       });

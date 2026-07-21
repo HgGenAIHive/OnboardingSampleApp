@@ -163,9 +163,73 @@ header p {
   margin-bottom: 8px;
 }
 
+.customer-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.customer-card-header h3 {
+  margin-bottom: 0;
+}
+
 .customer-meta {
   display: flex;
   gap: 16px;
   color: #6b7280;
   font-size: 0.9rem;
+}
+
+.remove-button {
+  background: transparent;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.remove-button:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.customer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.customer-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.customer-form input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.customer-form button {
+  align-self: flex-start;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.customer-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

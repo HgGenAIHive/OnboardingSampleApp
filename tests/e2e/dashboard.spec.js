@@ -21,12 +21,12 @@ test.describe('Onboarding Dashboard', () => {
     await expect(page.getByRole('button', { name: 'Import' })).toBeVisible();
   });
 
-  test('should display example customer in onboarding queue', async ({ page }) => {
+  test('should display sample customers in onboarding queue', async ({ page }) => {
     await page.goto('/');
 
-    // Wait for data to load and verify example customer is shown
-    await expect(page.locator('.customer-card')).toBeVisible();
-    await expect(page.locator('.customer-card h3')).toContainText('Acme Corporation');
+    // Wait for data to load and verify sample customers are shown
+    await expect(page.locator('.customer-card')).toHaveCount(4);
+    await expect(page.locator('.customer-card h3').first()).toContainText('Acme Corporation');
   });
 
   test('should switch between tabs', async ({ page }) => {
@@ -34,8 +34,31 @@ test.describe('Onboarding Dashboard', () => {
 
     // Click on Customer Info tab
     await page.getByRole('button', { name: 'Customer Info' }).click();
-    
-    // Verify placeholder content is shown
-    await expect(page.locator('.placeholder h2')).toContainText('Customer Info');
+
+    // Verify the add-customer form is shown
+    await expect(page.locator('main h2')).toContainText('Customer Info');
+    await expect(page.getByRole('button', { name: 'Add Customer' })).toBeVisible();
+  });
+
+  test('should add and then remove a customer', async ({ page }) => {
+    await page.goto('/');
+
+    // Add a new customer via the Customer Info tab
+    await page.getByRole('button', { name: 'Customer Info' }).click();
+    await page.getByLabel('Name*').fill('Playwright Test Co');
+    await page.getByRole('button', { name: 'Add Customer' }).click();
+    await expect(page.getByText('Playwright Test Co added to the onboarding queue')).toBeVisible();
+
+    // Verify it now appears in the dashboard queue
+    await page.getByRole('button', { name: 'Dashboard' }).click();
+    await expect(page.locator('.customer-card', { hasText: 'Playwright Test Co' })).toBeVisible();
+
+    // Remove it and verify it disappears
+    page.once('dialog', dialog => dialog.accept());
+    await page
+      .locator('.customer-card', { hasText: 'Playwright Test Co' })
+      .getByRole('button', { name: 'Remove' })
+      .click();
+    await expect(page.locator('.customer-card', { hasText: 'Playwright Test Co' })).toHaveCount(0);
   });
 });
