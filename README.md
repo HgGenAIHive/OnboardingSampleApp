@@ -18,7 +18,51 @@ Build an internal tool that helps CS clear the onboarding queue faster.
 
 ---
 
-## Quick Start
+## Quick Start (Dev Container — recommended for the workshop)
+
+This repo ships a preconfigured [Dev Container](https://containers.dev/) so every participant gets an identical, ready-to-run environment (Node 20, all dependencies, Playwright browsers) with **no local setup** beyond Docker + VS Code.
+
+### One-time prerequisites (Windows & Mac)
+
+1. **Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)** and make sure it is **running** (whale icon in the tray/menu bar).
+   - **Windows:** Docker Desktop uses the WSL 2 backend. If prompted during install, accept the WSL 2 installation and reboot. No other config is needed.
+   - **Mac:** Works on both Apple Silicon (M1/M2/M3) and Intel — Docker Desktop picks the right image automatically.
+2. **Install [VS Code](https://code.visualstudio.com/)**.
+3. **Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)** (`ms-vscode-remote.remote-containers`).
+
+### Open the app in the Dev Container
+
+1. Clone the repo and open the folder in VS Code:
+   - **Windows (PowerShell):**
+     ```powershell
+     git clone https://github.com/HgGenAIHive/OnboardingSampleApp.git
+     cd OnboardingSampleApp
+     code .
+     ```
+   - **Mac (Terminal):**
+     ```bash
+     git clone https://github.com/HgGenAIHive/OnboardingSampleApp.git
+     cd OnboardingSampleApp
+     code .
+     ```
+     > On Mac, if the `code` command isn't found, open VS Code and run **Shell Command: Install 'code' command in PATH** from the Command Palette (`Cmd+Shift+P`).
+2. When VS Code shows the **"Reopen in Container"** popup (bottom-right), click it. If you miss it, open the Command Palette (**Windows:** `Ctrl+Shift+P` / **Mac:** `Cmd+Shift+P`) and run **Dev Containers: Reopen in Container**.
+3. The first build takes a few minutes (it pulls the image, installs all dependencies, and installs the Playwright browser). Subsequent opens are fast.
+4. Once the container is ready, open a terminal in VS Code (**Windows:** `` Ctrl+` `` / **Mac:** `` Ctrl+` ``) and run:
+   ```bash
+   npm start
+   ```
+5. VS Code automatically **forwards ports 5173 and 3001** from the container to your machine and offers to open the browser. Open **http://localhost:5173** on your host (Windows or Mac) — it just works, no manual port mapping required.
+
+You can also press **F5** inside the container to launch with the debugger attached (see `.vscode/launch.json`).
+
+> **Tip:** Everything (deps, tests, git) runs *inside* the container, so your Windows/Mac machine stays clean. To stop, close the VS Code window or run **Dev Containers: Reopen Folder Locally**.
+
+---
+
+## Quick Start (without a Dev Container)
+
+Requires Node.js 20+ installed locally.
 
 ```bash
 # Install all dependencies (root, server, client)
