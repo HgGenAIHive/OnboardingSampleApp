@@ -1,9 +1,6 @@
 {
   "name": "Agentic Elephant Carpaccio",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
-  },
   "forwardPorts": [5173, 3001],
   "portsAttributes": {
     "5173": {
