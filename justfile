@@ -1,8 +1,7 @@
 # Task runner for local development. Run `just` to list recipes.
 
-set windows-shell := ["powershell.exe", "-NoLogo", "-NoProfile", "-Command"]
-
-min_node_major := "20"
+# cmd.exe resolves npm/npx to their .cmd shims, avoiding PowerShell execution-policy blocks on npm.ps1
+set windows-shell := ["cmd.exe", "/c"]
 
 # List available recipes
 default:
@@ -14,11 +13,11 @@ setup: check-node
     npm ci --prefix server
     npm ci --prefix client
     npx playwright install {{ if os() == "linux" { "--with-deps " } else { "" } }}chromium
-    @echo "Setup complete. Run 'just start' and open http://localhost:5173"
+    @echo Setup complete. Next: just start, then open http://localhost:5173
 
 # Fail fast if Node.js or npm is missing or too old
 check-node:
-    @node -e "const v = process.versions.node; if (Number(v.split('.')[0]) < {{ min_node_major }}) { console.error('Node.js {{ min_node_major }}+ is required, found ' + v + '. Install it from https://nodejs.org/'); process.exit(1); } console.log('Node.js ' + v + ' OK');"
+    @node scripts/check-node.js
     @npm --version
 
 # Run the full app (server on :3001, client on :5173)

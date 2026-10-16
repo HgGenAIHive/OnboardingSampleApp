@@ -70,7 +70,7 @@ One command installs every dependency (root, server, client) and the Playwright 
 
 **Prerequisites**
 
-1. **[Node.js](https://nodejs.org/) 20+** (includes npm). `just setup` checks the version and stops with a clear message if it is too old.
+1. **[Node.js](https://nodejs.org/) 20.19+ or 22.12+** (includes npm; any current LTS works). `just setup` checks the version and stops with a clear message if it is unsupported.
 2. **[just](https://just.systems/man/en/packages.html)**, the command runner:
    - **Mac:** `brew install just`
    - **Windows:** `winget install --id Casey.Just --exact` (or `scoop install just`)
