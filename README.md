@@ -20,6 +20,8 @@ Build an internal tool that helps CS clear the onboarding queue faster.
 
 ## Quick Start (Dev Container — recommended for the workshop)
 
+> **Two ways to get started:** use the Dev Container below (nothing to install but Docker + VS Code), or develop directly on your machine with a single `just setup` — see [Quick Start (without a Dev Container)](#quick-start-without-a-dev-container).
+
 This repo ships a preconfigured [Dev Container](https://containers.dev/) so every participant gets an identical, ready-to-run environment (Node 20, all dependencies, Playwright browsers) with **no local setup** beyond Docker + VS Code.
 
 ### One-time prerequisites (Windows & Mac)
@@ -62,11 +64,44 @@ You can also press **F5** inside the container to launch with the debugger attac
 
 ## Quick Start (without a Dev Container)
 
-Requires Node.js 20+ installed locally.
+### Option 1: `just setup` (recommended)
+
+One command installs every dependency (root, server, client) and the Playwright Chromium browser used by the e2e tests.
+
+**Prerequisites**
+
+1. **[Node.js](https://nodejs.org/) 20+** (includes npm). `just setup` checks the version and stops with a clear message if it is too old.
+2. **[just](https://just.systems/man/en/packages.html)**, the command runner:
+   - **Mac:** `brew install just`
+   - **Windows:** `winget install --id Casey.Just --exact` (or `scoop install just`)
+   - **Linux:** your package manager (e.g. `sudo apt install just` on Ubuntu 24.04+), or `cargo install just`
+
+**Set up and run**
+
+```bash
+git clone https://github.com/HgGenAIHive/OnboardingSampleApp.git
+cd OnboardingSampleApp
+
+just setup   # install all dependencies + Playwright Chromium
+just start   # run server (3001) and client (5173)
+```
+
+Then open **http://localhost:5173** in your browser.
+
+> **Linux:** `just setup` runs `playwright install --with-deps`, which installs Chromium's system libraries and may prompt for your `sudo` password.
+
+Run `just` with no arguments to list every recipe.
+
+### Option 2: npm only
+
+If you'd rather not install `just`:
 
 ```bash
 # Install all dependencies (root, server, client)
 npm run install:all
+
+# Install the Playwright browser (needed for e2e tests only)
+npx playwright install chromium
 
 # Start the app (runs both server and client)
 npm start
@@ -76,13 +111,15 @@ Then open **http://localhost:5173** in your browser.
 
 ### Other Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Run full app (server + client) |
-| `npm run server` | Run backend only (port 3001) |
-| `npm run client` | Run frontend only (port 5173) |
-| `npm run test:unit` | Run unit tests |
-| `npm run test:e2e` | Run Playwright e2e tests |
+| just | npm | Description |
+|------|-----|-------------|
+| `just setup` | `npm run install:all` | Install all dependencies (`just` also installs Playwright Chromium) |
+| `just start` | `npm start` | Run full app (server + client) |
+| `just server` | `npm run server` | Run backend only (port 3001) |
+| `just client` | `npm run client` | Run frontend only (port 5173) |
+| `just test` | `npm test` | Run unit and e2e tests |
+| `just test-unit` | `npm run test:unit` | Run unit tests |
+| `just test-e2e` | `npm run test:e2e` | Run Playwright e2e tests |
 
 ### VSCode/Cursor/Windsurf
 
@@ -168,8 +205,8 @@ OnboardingStep {
 - ✅ Progress bar at 0%
 
 ### Test Structure
-- ✅ Unit tests: `npm run test:unit`
-- ✅ E2E tests: `npm run test:e2e`
+- ✅ Unit tests: `just test-unit` / `npm run test:unit`
+- ✅ E2E tests: `just test-e2e` / `npm run test:e2e`
 
 ---
 
